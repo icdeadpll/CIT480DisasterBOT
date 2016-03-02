@@ -1,0 +1,47 @@
+import RPi.GPIO as GPIO
+import motor_control as MC
+from time import sleep
+import Headlight_control as HC
+
+sleep(1)
+HC.on()
+MC.forward_right()
+sleep(2)
+HC.off()
+MC.stop()
+sleep(1)
+MC.backward_right()
+sleep(2)
+MC.stop()
+sleep(1)
+MC.forward_left()
+HC.on()
+sleep(2)
+HC.off()
+MC.stop()
+sleep(1)
+MC.backward_left()
+sleep(2)
+MC.stop()
+sleep(1)
+HC.on()
+MC.forward(2)
+HC.off()
+MC.stop()
+sleep(1)
+MC.backward(2)
+MC.stop()
+sleep(1)
+MC.forward_right()
+MC.backward_left()
+sleep(2)
+MC.stop()
+sleep(1)
+MC.backward_right()
+MC.forward_left()
+sleep(2)
+MC.stop()
+
+
+
+GPIO.cleanup()
